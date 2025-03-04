@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class DevicesList extends StatelessWidget {
+class WashroomCorridor extends StatelessWidget {
   final List<Map<String, dynamic>> devices;
 
-  const DevicesList({super.key, required this.devices});
+  const WashroomCorridor({super.key, required this.devices});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class DeviceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final gradientColors = _getGradientColors(device['name'] as String);
-
+final size = MediaQuery.of(context).size;
     return Container(
       margin: const EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
@@ -167,6 +167,25 @@ class DeviceCard extends StatelessWidget {
                           ],
                         ),
                       ),
+                       SizedBox(
+                height: size.height * .006,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                spacing: 10,
+                children: [
+                  Text(
+                    'Total Consumption Per day :',
+                    style: TextStyle(fontSize: 25),
+                  ),
+                  Text(
+                    '62 kWh',
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
+                        fontSize: 20),
+                  )
+                ],
+              ),
                     ],
                   ),
               ],
